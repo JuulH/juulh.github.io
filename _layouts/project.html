@@ -1,0 +1,94 @@
+---
+layout: default
+refactor: true
+---
+
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>{{ page.title }}</h1>
+    
+    {% if page.description %}
+      <p class="text-muted mb-4">{{ page.description }}</p>
+    {% endif %}
+
+    <div class="post-meta text-muted mb-4">
+      {% if page.date %}
+        <span>
+          <i class="far fa-calendar-alt fa-fw"></i>
+          {% include datetime.html date=page.date tooltip=true lang=lang %}
+        </span>
+      {% endif %}
+      
+      {% if page.tags and page.tags.size > 0 %}
+        <div class="mt-2">
+          {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if page.github or page.itchio or page.website %}
+      <div class="project-links mb-4">
+        {% if page.github %}
+          <a href="{{ page.github }}" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        {% endif %}
+        
+        {% if page.itchio %}
+          <a href="{{ page.itchio }}" class="btn btn-outline-success btn-sm me-2" target="_blank" rel="noopener">
+            <i class="fa-brands fa-itch-io"></i> itch.io
+          </a>
+        {% endif %}
+        
+        {% if page.website %}
+          <a href="{{ page.website }}" class="btn btn-outline-info btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-globe"></i> Website
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if page.image %}
+      <div class="project-image mb-4">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded">
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  {% if page.tech_stack and page.tech_stack.size > 0 %}
+    <div class="tech-stack mt-5 pt-4 border-top">
+      <h2 class="mb-3">Tech Stack</h2>
+      <div class="d-flex flex-wrap gap-2">
+        {% for tech in page.tech_stack %}
+          <span class="badge bg-secondary">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <footer class="post-tail-wrapper text-muted mt-5 pt-4 border-top">
+    <div class="post-navigation d-flex justify-content-between">
+      {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-primary btn-sm">
+          <i class="fas fa-arrow-left"></i> {{ page.previous.title | truncate: 30 }}
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-primary btn-sm">
+          {{ page.next.title | truncate: 30 }} <i class="fas fa-arrow-right"></i>
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
+  </footer>
+</article>

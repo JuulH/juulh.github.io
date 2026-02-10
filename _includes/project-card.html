@@ -1,0 +1,90 @@
+<div class="card h-100 project-card">
+  {% if include.project.image %}
+    <img src="{{ include.project.image | relative_url }}" class="card-img-top project-img" alt="{{ include.project.title }}" loading="lazy">
+  {% endif %}
+
+  <div class="card-body d-flex flex-column">
+    {% assign language_tags = "C++,C#,Python,JavaScript,TypeScript,Go,Rust,Java,Swift,Kotlin,PHP" | split: "," %}
+    {% assign project_type_tags = "Solo Project,Group Project,University,Personal" | split: "," %}
+    {% assign engine_tags = "Unreal Engine,Unity,Godot,Custom Engine,Mantis Engine" | split: "," %}
+
+    {% if include.project.tags and include.project.tags.size > 0 %}
+      <div class="project-tags mb-2">
+        {% for tag in include.project.tags %}
+          {% assign tag_type = "other" %}
+          {% if language_tags contains tag %}
+            {% assign tag_type = "language" %}
+          {% elsif project_type_tags contains tag %}
+            {% assign tag_type = "project" %}
+          {% elsif engine_tags contains tag %}
+            {% assign tag_type = "engine" %}
+          {% endif %}
+          <span class="badge project-tag tag-{{ tag_type }} me-1 mb-1">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <h5 class="card-title">
+      <a href="{{ include.project.url | relative_url }}" class="stretched-link">{{ include.project.title }}</a>
+    </h5>
+
+    {% if include.project.description %}
+      <p class="card-text text-muted">{{ include.project.description }}</p>
+    {% endif %}
+
+    {% assign team_size = include.project.team_size %}
+    {% if team_size == nil %}
+      {% if include.project.tags contains "Solo Project" %}
+        {% assign team_size = "Solo" %}
+      {% elsif include.project.tags contains "Group Project" %}
+        {% assign team_size = "Team" %}
+      {% endif %}
+    {% endif %}
+
+    {% if team_size or include.project.duration or include.project.responsibilities or include.project.github or include.project.itchio %}
+      <div class="project-footer mt-auto pt-3">
+        {% if team_size or include.project.duration or include.project.responsibilities %}
+          <div class="project-meta">
+            {% if team_size %}
+              <div class="project-meta-item">
+                <span class="meta-label">Team</span>
+                <span class="meta-value">{{ team_size }}</span>
+              </div>
+            {% endif %}
+            {% if include.project.duration %}
+              <div class="project-meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">{{ include.project.duration }}</span>
+              </div>
+            {% endif %}
+            {% if include.project.responsibilities %}
+              <div class="project-meta-item">
+                <span class="meta-label">Key responsibilities</span>
+                <ul class="responsibility-list">
+                  {% for item in include.project.responsibilities %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if include.project.github or include.project.itchio %}
+          <div class="project-quick-links mt-3 pt-3 border-top">
+            {% if include.project.github %}
+              <a href="{{ include.project.github }}" class="text-muted me-3" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            {% endif %}
+            {% if include.project.itchio %}
+              <a href="{{ include.project.itchio }}" class="text-muted" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                <i class="fa-brands fa-itch-io"></i> itch.io
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

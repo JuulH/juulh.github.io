@@ -1,0 +1,139 @@
+<style>
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--bs-border-color);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Light mode styles */
+html:[data-mode="light"] .project-card {
+  background-color: #f8f9fa;
+}
+
+/* Dark mode styles */
+html:not([data-mode="light"]) .project-card {
+  background-color: #1e1e1e;
+  color: rgb(255 255 255 / 95%);
+}
+
+.project-card > a:has(.card-img-top) {
+  margin: 0!important;
+}
+
+.project-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card .card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card .card-title a:hover {
+  color: var(--link-color);
+}
+
+.project-card .stretched-link::after {
+  z-index: 1;
+}
+
+.project-tags .badge {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+}
+
+.project-tag {
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+
+.tag-language {
+  background-color: #cfe8ff;
+  border-color: #8ec5ff;
+  color: #0b4a6f;
+}
+
+.tag-project {
+  background-color: #ffe6c7;
+  border-color: #ffb973;
+  color: #7a3b00;
+}
+
+.tag-engine {
+  background-color: #d9f7d6;
+  border-color: #88d69a;
+  color: #1e6b2e;
+}
+
+.tag-other {
+  background-color: #e4eef6;
+  border-color: #b9d0e3;
+  color: #2c4960;
+}
+
+html:not([data-mode="light"]) .tag-language {
+  background-color: #1e3a56;
+  border-color: #2a5c8a;
+  color: #cfe8ff;
+}
+
+html:not([data-mode="light"]) .tag-project {
+  background-color: #523116;
+  border-color: #7c4b1f;
+  color: #ffe6c7;
+}
+
+html:not([data-mode="light"]) .tag-engine {
+  background-color: #1e3d28;
+  border-color: #2f6b43;
+  color: #d9f7d6;
+}
+
+html:not([data-mode="light"]) .tag-other {
+  background-color: #233447;
+  border-color: #3a526b;
+  color: #e4eef6;
+}
+
+.project-meta {
+  font-size: 0.86rem;
+  color: var(--text-muted-color);
+}
+
+.project-meta-item + .project-meta-item {
+  margin-top: 0.5rem;
+}
+
+.meta-label {
+  display: inline-block;
+  min-width: 8.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.responsibility-list {
+  margin: 0.35rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.responsibility-list li {
+  margin-bottom: 0.2rem;
+}
+
+.project-quick-links a {
+  font-size: 0.875rem;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+.project-quick-links a:hover {
+  color: var(--link-color) !important;
+}
+</style>

@@ -22,7 +22,7 @@ refactor: true
       {% if page.tags and page.tags.size > 0 %}
         <div class="mt-2">
           {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+            <span class="tag">{{ tag }}</span>
           {% endfor %}
         </div>
       {% endif %}

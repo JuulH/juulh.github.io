@@ -1,7 +1,7 @@
 ---
 title: My Awesome Project
 description: A brief one-line description of what this project does and why it's cool
-image: /assets/img/projects/example-project.png
+image: /assets/img/projects/infinigolf-intake.png
 tags: [Python, Django, PostgreSQL, REST API]
 tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
 order: 1

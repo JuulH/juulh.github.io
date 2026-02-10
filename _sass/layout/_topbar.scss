@@ -6,6 +6,9 @@
 #topbar-wrapper {
   height: v.$topbar-height;
   background-color: var(--topbar-bg);
+  border-bottom-left-radius: v.$radius-lg;
+  border-bottom-right-radius: v.$radius-lg;
+  overflow: hidden;
 
   @include bp.lt(bp.get(lg)) {
     @include mx.slide(top 0.2s ease);

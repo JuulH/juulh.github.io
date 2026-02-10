@@ -85,7 +85,7 @@ skills:
 				</a>
 
 				{% if page.resume_url %}
-					<a class="btn home-resume-btn home-primary-btn" href="{{ page.resume_url | relative_url }}" target="_blank" rel="noopener">
+					<a class="btn btn-outline-secondary home-primary-btn" href="{{ page.resume_url | relative_url }}" target="_blank" rel="noopener">
 						<i class="fas fa-file-alt me-2"></i>Resume
 					</a>
 				{% endif %}
@@ -179,6 +179,19 @@ skills:
 	color: #ffffff;
 	border-color: #ffffff;
 	background: rgb(255 255 255 / 10%);
+}
+
+html:not([data-mode]) .home-resume-btn,
+html[data-mode='light'] .home-resume-btn {
+	color: #111111;
+	border-color: #111111;
+}
+
+html:not([data-mode]) .home-resume-btn:hover,
+html:not([data-mode]) .home-resume-btn:focus,
+html[data-mode='light'] .home-resume-btn:hover,
+html[data-mode='light'] .home-resume-btn:focus {
+	background: rgba(0 0 0 / 5%);
 }
 
 .home-bio p {

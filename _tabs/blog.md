@@ -2,6 +2,6 @@
 layout: blog
 title: Blog
 icon: fas fa-newspaper
-order: 0
+order: 2
 permalink: /blog/
 ---

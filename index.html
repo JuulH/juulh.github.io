@@ -235,7 +235,7 @@ skills:
 	position: absolute;
 	left: 50%;
 	bottom: calc(100% + 0.45rem);
-	transform: translateX(-50%);
+	transform: translateX(calc(-50% + var(--tooltip-shift, 0px)));
 	white-space: normal;
 	width: 320px;
 	max-width: 90vw;
@@ -248,7 +248,7 @@ skills:
 	text-align: center;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 150ms ease;
+	transition: opacity 150ms ease, transform 150ms ease;
 	z-index: 5;
 }
 
@@ -257,7 +257,8 @@ skills:
 	font-weight: 400;
 }
 
-.home-skill-icon:hover .home-skill-tooltip {
+.home-skill-icon:hover .home-skill-tooltip,
+.home-skill-icon:focus .home-skill-tooltip {
 	opacity: 1;
 }
 
@@ -271,6 +272,74 @@ skills:
 	object-fit: contain;
 }
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const main = document.querySelector('main') || document.body;
+		const icons = document.querySelectorAll('.home-skill-icon');
+
+		icons.forEach((icon) => {
+			const tooltip = icon.querySelector('.home-skill-tooltip');
+			if (!tooltip) {
+				return;
+			}
+
+			const clampTooltip = () => {
+				tooltip.style.setProperty('--tooltip-shift', '0px');
+				const tooltipRect = tooltip.getBoundingClientRect();
+				const mainRect = main.getBoundingClientRect();
+				const viewportRect = {
+					left: 0,
+					right: document.documentElement.clientWidth
+				};
+				const bounds = window.innerWidth < 768 ? viewportRect : mainRect;
+				const padding = 8;
+				let shift = 0;
+
+				if (tooltipRect.left < bounds.left + padding) {
+					shift = (bounds.left + padding) - tooltipRect.left;
+				} else if (tooltipRect.right > bounds.right - padding) {
+					shift = (bounds.right - padding) - tooltipRect.right;
+				}
+
+				tooltip.style.setProperty('--tooltip-shift', `${shift}px`);
+			};
+
+			icon.addEventListener('mouseenter', () => {
+				tooltip.style.transition = 'none';
+				clampTooltip();
+				requestAnimationFrame(() => {
+					tooltip.style.transition = '';
+				});
+			});
+			icon.addEventListener('focus', () => {
+				tooltip.style.transition = 'none';
+				clampTooltip();
+				requestAnimationFrame(() => {
+					tooltip.style.transition = '';
+				});
+			});
+
+			icon.addEventListener('touchstart', () => {
+				tooltip.style.transition = 'none';
+				clampTooltip();
+				requestAnimationFrame(() => {
+					tooltip.style.transition = '';
+				});
+			}, { passive: true });
+			const resetTooltip = () => {
+				tooltip.style.transition = 'none';
+				tooltip.style.setProperty('--tooltip-shift', '0px');
+				requestAnimationFrame(() => {
+					tooltip.style.transition = '';
+				});
+			};
+
+			icon.addEventListener('mouseleave', resetTooltip);
+			icon.addEventListener('blur', resetTooltip);
+		});
+	});
+</script>
 
 <section class="home-section mb-5">
 	<div class="d-flex align-items-center justify-content-between mb-3">

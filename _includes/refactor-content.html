@@ -89,10 +89,15 @@
 
     <!-- take out classes -->
     {% assign _wrapper_class = '' %}
+    {% assign _is_project_img = false %}
 
     {% if _class %}
       {% assign _remain = _class %}
       {% assign _class_array = _class | split: ' ' %}
+
+      {% if _class contains 'project-img' %}
+        {% assign _is_project_img = true %}
+      {% endif %}
 
       {% for c in _class_array %}
         {% assign _pick = false %}
@@ -161,7 +166,7 @@
       {% assign _left = _left | append: ' loading="lazy"' %}
     {% endif %}
 
-    {% if page.layout == 'home' %}
+    {% if page.layout == 'home' and _is_project_img == false %}
       <!-- create the image wrapper -->
       {% assign _wrapper_start = '<div class="preview-img ' | append: _wrapper_class | append: '">' %}
 

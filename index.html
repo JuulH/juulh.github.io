@@ -1,4 +1,322 @@
 ---
 layout: home
 # Index page
+panel: false
+specialization: Engine & Tools
+bio: >
+    Games programmer studying at Breda University of Applied Sciences, specializing in engine development and tools programming.
+    I enjoy creating tools and systems that streamline workflows and help teams work more efficiently.
+    With experience across custom C++ engines, Unreal Engine, Unity, I bring both technical expertise and strong communication skills to collaborative projects.
+
+
+    In my spare time, I apply programming in my **robotics team** and **game jams**. Feel free to get in touch!
+    
+
+    **Looking for an internship starting Summer 2026**
+contact_button_label: Get in touch
+itchio_url: https://juulh.itch.io/
+resume_url: /assets/resume.pdf
+skills:
+  - title: Unreal Engine
+    icon: /assets/img/icons/unrealengine.svg
+    tooltip: "Gameplay systems & tools in C++ and Blueprints, from personal to large group projects."
+  - title: Unity
+    icon: /assets/img/icons/unity.svg
+    tooltip: "Gameplay systems in C#, various personal projects and team-based gamejams."
+  - title: C++
+    icon: /assets/img/icons/cplusplus.svg
+    tooltip: "3+ years of experience creating custom engines and tools from scratch. I enjoy learning about new language features and algorithms!"
+  - title: C#
+    icon: /assets/img/icons/csharp.svg
+    tooltip: "4+ years creating gameplay systems & scripts in Unity, from personal projects to group gamejam projects."
+  - title: Python
+    icon: /assets/img/icons/python.svg
+    tooltip: "Automated CI/CD build scripts, tooling, gameplay."
+  - title: GitHub
+    icon: /assets/img/icons/github.svg
+    tooltip: "6+ years of experience using source control in personal and team environments. Familiar with GitHub Projects, review processes and GitHub Actions for CI/CD."
+  - title: Perforce
+    icon: /assets/img/icons/perforce.png
+    tooltip: "3 years of experience with P4 and P4V in a team environment including Swarm code reviews."
+  - title: Jenkins
+    icon: /assets/img/icons/jenkins.svg
+    tooltip: "Wrote pipelines for build automation & deployment to platforms like itch.io."
 ---
+
+{% assign contact_url = nil %}
+{% if site.social.email %}
+	{% assign email = site.social.email | split: '@' %}
+	{% capture contact_url %}javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'){% endcapture %}
+{% endif %}
+{% if contact_url == nil %}
+	{% assign contact_url = '/about/' | relative_url %}
+{% endif %}
+
+{% assign display_specialization = page.specialization | default: site.tagline | default: 'Engine & Tools' %}
+{% assign display_bio = page.bio | default: site.description | default: 'Short bio goes here.' %}
+
+<section class="home-hero mb-5">
+	<div class="row g-4 align-items-start">
+		<div class="col-12">
+			<h1 class="display-5 mb-2">{{ site.social.name }}</h1>
+			<h2 class="h5 text-muted mb-3">{{ display_specialization }}</h2>
+			<div class="home-bio lead mb-4">{{ display_bio | markdownify }}</div>
+
+			<div class="home-skills mt-3">
+				<p class="home-skill-header text-uppercase text-muted">Skills & Tools</p>
+				<div class="home-skill-list">
+					{% if page.skills and page.skills.size > 0 %}
+						{% for skill in page.skills %}
+							<span class="home-skill-icon" title="{{ skill.title }}" aria-label="{{ skill.title }}">
+								<img src="{{ skill.icon | relative_url }}" alt="{{ skill.title }}">
+								<span class="home-skill-tooltip">
+									<strong>{{ skill.title }}</strong>
+									<span>{{ skill.tooltip }}</span>
+								</span>
+							</span>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="d-flex flex-wrap align-items-center gap-2 mt-3">
+				<a class="btn btn-primary home-primary-btn" href="{{ contact_url }}">
+					<i class="fas fa-envelope me-2"></i>{{ page.contact_button_label | default: 'Contact' }}
+				</a>
+
+				{% if page.resume_url %}
+					<a class="btn home-resume-btn home-primary-btn" href="{{ page.resume_url | relative_url }}" target="_blank" rel="noopener">
+						<i class="fas fa-file-alt me-2"></i>Resume
+					</a>
+				{% endif %}
+
+				<div class="home-contact d-flex flex-wrap gap-2">
+					{% for entry in site.data.contact %}
+						{%- assign url = null -%}
+
+						{% case entry.type %}
+							{% when 'github' %}
+								{%- unless site.github.username -%}
+									{%- continue -%}
+								{%- endunless -%}
+								{%- capture url -%}
+									https://github.com/{{ site.github.username }}
+								{%- endcapture -%}
+							{% when 'linkedin' %}
+								{% assign url = entry.url %}
+							{% else %}
+								{%- continue -%}
+						{% endcase %}
+
+						{% if url %}
+							<a
+								class="btn btn-outline-secondary home-social-btn"
+								href="{{ url }}"
+								aria-label="{{ entry.type }}"
+								title="{{ entry.type | capitalize }}"
+								{% assign link_types = '' %}
+
+								{% unless entry.noblank %}
+									target="_blank"
+									{% assign link_types = 'noopener noreferrer' %}
+								{% endunless %}
+
+								{% if entry.type == 'mastodon' %}
+									{% assign link_types = link_types | append: ' me' | strip %}
+								{% endif %}
+
+								{% unless link_types == empty %}
+									rel="{{ link_types }}"
+								{% endunless %}
+							>
+									<i class="{{ entry.icon }}"></i>
+							</a>
+						{% endif %}
+					{% endfor %}
+
+					{% if page.itchio_url %}
+						<a
+							class="btn btn-outline-secondary home-social-btn"
+							href="{{ page.itchio_url }}"
+							aria-label="itchio"
+							title="Itch.io"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i class="fa-brands fa-itch-io"></i>
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.home-social-btn {
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-primary-btn {
+	height: 2.75rem;
+	display: inline-flex;
+	align-items: center;
+}
+
+.home-resume-btn {
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	background: transparent;
+}
+
+.home-resume-btn:hover,
+.home-resume-btn:focus {
+	color: #ffffff;
+	border-color: #ffffff;
+	background: rgb(255 255 255 / 10%);
+}
+
+.home-bio p {
+	margin: 0;
+}
+
+.home-bio p + p {
+	margin-top: 0.75rem;
+}
+
+.home-bio strong {
+	font-weight: 700;
+}
+
+.home-skills {
+	margin-top: 0.5rem;
+}
+
+.home-skill-header {
+	margin: 0 0 0.5rem;
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+}
+
+.home-skill-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.home-skill-icon {
+	width: 2.75rem;
+	height: 2.75rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+	border-radius: 0.6rem;
+	background: var(--card-bg);
+	border: 1px solid var(--bs-border-color);
+	color: var(--text-color);
+	position: relative;
+	transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.home-skill-icon:hover {
+	transform: translateY(-2px);
+	border-color: var(--link-color);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.home-skill-tooltip {
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	bottom: calc(100% + 0.45rem);
+	transform: translateX(-50%);
+	white-space: normal;
+	width: 320px;
+	max-width: 90vw;
+	background: rgba(0, 0, 0, 0.82);
+	color: #ffffff;
+	padding: 0.6rem 0.8rem;
+	border-radius: 0.55rem;
+	font-size: 0.82rem;
+	line-height: 1.3;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 150ms ease;
+	z-index: 5;
+}
+
+.home-skill-tooltip span {
+	display: block;
+	font-weight: 400;
+}
+
+.home-skill-icon:hover .home-skill-tooltip {
+	opacity: 1;
+}
+
+
+.home-skill-icon img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	margin: 0;
+	object-fit: contain;
+}
+</style>
+
+<section class="home-section mb-5">
+	<div class="d-flex align-items-center justify-content-between mb-3">
+		<h2 class="h4 mb-0">Featured Projects</h2>
+		<a class="text-muted" href="{{ '/projects/' | relative_url }}">View all</a>
+	</div>
+
+	{% assign featured_projects = site.projects | sort: 'order' | slice: 0, 3 %}
+	<div class="row g-4">
+		{% for project in featured_projects %}
+			<div class="col-12 col-md-6 col-lg-4">
+				{% include project-card.html project=project %}
+			</div>
+		{% endfor %}
+	</div>
+</section>
+
+{% include project-card-styles.html %}
+
+<section class="home-section mb-4">
+	<div class="d-flex align-items-center justify-content-between mb-3">
+		<h2 class="h4 mb-0">Featured Posts</h2>
+		<a class="text-muted" href="{{ '/blog/' | relative_url }}">View all</a>
+	</div>
+
+	{% assign featured_posts = site.posts | where_exp: 'item', 'item.hidden != true' | slice: 0, 3 %}
+	<div class="row g-4">
+		{% for post in featured_posts %}
+			<div class="col-12 col-lg-4">
+				<article class="card h-100">
+					<div class="card-body d-flex flex-column">
+						<h3 class="h5 card-title">
+							<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+						</h3>
+						<p class="text-muted small mb-2">
+							{% include datetime.html date=post.date lang=lang %}
+						</p>
+						<div class="content text-muted mb-3">
+							<p>{% include post-summary.html %}</p>
+						</div>
+						<div class="mt-auto">
+							<a class="btn btn-outline-primary btn-sm" href="{{ post.url | relative_url }}">Read more</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		{% endfor %}
+	</div>
+</section>

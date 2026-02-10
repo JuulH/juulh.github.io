@@ -4,6 +4,11 @@ swcache: true
 ---
 
 [
+  {% assign post_count = site.posts | size %}
+  {% assign project_count = site.projects | size %}
+  {% assign total_count = post_count | plus: project_count %}
+  {% assign index = 0 %}
+
   {% for post in site.posts %}
   {
     "title": {{ post.title | jsonify }},
@@ -11,8 +16,22 @@ swcache: true
     "categories": {{ post.categories | join: ', ' | jsonify }},
     "tags": {{ post.tags | join: ', ' | jsonify }},
     "date": {{ post.date | jsonify }},
+    "type": "post",
     {% capture content -%}{% include post-summary.html full_text=true %}{%- endcapture -%}
     "content": {{ content | jsonify }}
-  }{% unless forloop.last %},{% endunless %}
+  }{% assign index = index | plus: 1 %}{% if index < total_count %},{% endif %}
+  {% endfor %}
+
+  {% for project in site.projects %}
+  {
+    "title": {{ project.title | jsonify }},
+    "url": {{ project.url | relative_url | jsonify }},
+    "categories": "",
+    "tags": {{ project.tags | join: ', ' | jsonify }},
+    "date": {{ project.date | default: '' | jsonify }},
+    "type": "project",
+    {% capture project_content -%}{{ project.description }} {{ project.content | strip_html | strip_newlines }}{%- endcapture -%}
+    "content": {{ project_content | jsonify }}
+  }{% assign index = index | plus: 1 %}{% if index < total_count %},{% endif %}
   {% endfor %}
 ]

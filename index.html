@@ -261,17 +261,6 @@ skills:
 	opacity: 1;
 }
 
-.home-skill-icon.is-active .home-skill-tooltip {
-	opacity: 1;
-}
-
-@media (max-width: 768px) {
-	.home-skill-tooltip {
-		width: min(320px, calc(100vw - 2rem));
-		max-width: calc(100vw - 2rem);
-	}
-}
-
 
 .home-skill-icon img {
 	display: block;
@@ -319,7 +308,7 @@ skills:
 						<p class="text-muted small mb-2">
 							{% include datetime.html date=post.date lang=lang %}
 						</p>
-						<div class="content text-muted mb-3">
+						<div class="text-muted mb-3">
 							<p>{% include post-summary.html %}</p>
 						</div>
 						<div class="mt-auto">

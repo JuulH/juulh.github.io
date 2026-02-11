@@ -10,9 +10,9 @@ date: 2024-01-15
 team_size: Solo
 duration: 2 months
 responsibilities:
-  - Gameplay programming
-  - Level design
-  - UI implementation
+  - Compiler & Interpreter from scratch
+  - Blueprint function reflection & registration
+  - Developer settings, delegates & Blueprint
 ---
 
 ## Overview

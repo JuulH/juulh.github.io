@@ -1,52 +1,41 @@
 ---
 title: Brawl Bunnies
 description: Robo-engineered bunnies clash in electrifying class-based soccer matches. Punch & shoot the ball into the goal in fast-paced battles of skill and strategy!
-image: /assets/img/projects/infinigolf-intake.png
-tags: [C++, Unreal Engine, Group Project]
+image: /assets/img/projects/brawlbunnies.gif
+tags: [C++, Python, Unreal Engine, Group Project, CI/CD]
 order: 1
-date: 2024-01-15
-github: https://github.com/yourusername/project-name
-demo: https://project-demo.com
+date: 2024-06-17
+# github: https://github.com/yourusername/project-name
+itchio: https://buas.itch.io/brawl-bunnies
 team_size: 12
 duration: 2 months
 responsibilities:
-  - Gameplay programming
-  - Level design
-  - UI implementation
+  - CI/CD - Automatic Build & Deploy Pipeline
+  - Ball physics & interactions
+  - Barrier placement & preview
+  - itch.io page & builds
 ---
 
 ## Overview
 
-This project was built to solve [specific problem]. It demonstrates my ability to work with modern web technologies and build scalable applications.
+> Welcome to the world of Brawl Bunnies! Immerse yourself in a desert wasteland where robo-engineered bunnies clash in electrifying soccer matches. This class-based game, designed for 2-4 players offers exhilarating 1v1 or 2v2 action. Get ready for every match to be a thrilling test of skill, strategy, and teamwork as you punch the ball into the goals and strive for victory!
 
-## Key Features
+This was our first collaborative team project in year 1 of Creative Media and Game Technologies at BUas.
 
-- **Feature 1**: Description of the first main feature
-- **Feature 2**: Another important capability
-- **Feature 3**: What makes this project special
-- **Real-time Updates**: Uses WebSockets for live data
-- **API Integration**: Connects to multiple third-party services
+## My responsibilities
+### CI/CD - Automatic Build & Deploy Pipeline
+My personal research task was creating an automatic build pipeline.
 
-## Technical Highlights
+I created a Python script that:
+- Watches Perforce for changes;
+- Uses the UnrealBuildTool to create a player-ready build;
+- Uses itch.io's 'butler' tool to automatically deploy to a 'latest' beta branch;
+- Sends messages over Discord Webhooks to communicate the status & errors of builds to the team.
 
-The application uses a microservices architecture with Docker containers for easy deployment. The backend is built with Django and Django REST Framework, while the frontend uses React with TypeScript.
-
-Key technical decisions:
-- Chose PostgreSQL for complex relational queries
-- Implemented Redis caching to improve performance by 40%
-- Used Celery for background task processing
-
-## Challenges & Solutions
-
-One major challenge was handling concurrent user requests during peak times. I solved this by implementing a queueing system with Celery and optimizing database queries, which reduced response time from 2s to 200ms.
+This ended up being very beneficial to the team as we could quickly verify game-breaking issues and playtest the latest available version.
 
 ## What I Learned
-
-This project taught me a lot about system design, performance optimization, and the importance of writing maintainable code. I also gained experience with Docker orchestration and CI/CD pipelines.
-
-## Future Improvements
-
-- Add user authentication with OAuth2
-- Implement a GraphQL API alongside REST
-- Build a mobile app version
-- Add internationalization support
+- Working in a large team.
+- Working with Unreal Engine for the first time.
+- Creating CI/CD pipelines with UnrealBuildTool, Butler & Webhooks.
+- Preparing a game page and build for release.

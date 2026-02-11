@@ -91,7 +91,7 @@ experience_timeline:
   [BN DeStem: Bredase scholieren met pylonnenrobot naar WK in Houston](https://www.bndestem.nl/breda/bredase-scholieren-met-pylonnenrobot-naar-wk-in-houston-als-ze-genoeg-geld-ophalen~a458e100/){:target="_blank"}
   > This formally judged award is given to the team that truly embodied the ‘challenge’ of the FTC program. The team that receives this award is chosen by the judges as having best represented a ‘role-model‘ FTC Team. This team is a top contender for all other judging categories and is a strong competitor on the field. The Inspire Award Winner is an inspiration to other teams, acting with Gracious Professionalism™ both on and off the playing field. This team is able to communicate their experiences, enthusiasm and knowledge to other teams, sponsors, and the Judges. Working as a unit, this team will have demonstrated success in accomplishing the task of creating a working and competitive robot.
 
-  <img src="/assets/img/gentlebotz-robot.jpg">
+  <img src="/assets/img/gentlebotz-robot.jpg" alt="First Tech Challenge Robot of FTC Team GentleBotz">
   *First Tech Challenge Robot of FTC Team GentleBotz*
 
 ## Links

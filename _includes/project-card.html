@@ -70,20 +70,27 @@
           </div>
         {% endif %}
 
+        {% assign has_links = false %}
         {% if include.project.github or include.project.itchio %}
-          <div class="project-quick-links mt-3 pt-3 border-top">
-            {% if include.project.github %}
-              <a href="{{ include.project.github }}" class="text-muted me-3" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            {% endif %}
-            {% if include.project.itchio %}
-              <a href="{{ include.project.itchio }}" class="text-muted" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-                <i class="fa-brands fa-itch-io"></i> itch.io
-              </a>
-            {% endif %}
-          </div>
+          {% assign has_links = true %}
         {% endif %}
+        <div class="project-quick-links mt-3 pt-3 border-top{% unless has_links %} is-empty{% endunless %}">
+          {% if include.project.github %}
+            <a href="{{ include.project.github }}" class="text-muted me-3" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          {% endif %}
+          {% if include.project.itchio %}
+            <a href="{{ include.project.itchio }}" class="text-muted" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <i class="fa-brands fa-itch-io"></i> itch.io
+            </a>
+          {% endif %}
+          {% unless has_links %}
+            <span class="project-quick-links-placeholder" aria-hidden="true">
+              <i class="fab fa-github"></i> GitHub
+            </span>
+          {% endunless %}
+        </div>
       </div>
     {% endif %}
   </div>

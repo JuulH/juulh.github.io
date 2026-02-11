@@ -40,10 +40,12 @@ layout: compress
           <!-- panel -->
           {% unless page.panel == false %}
             <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
-              <div class="access">
-                {% include_cached update-list.html lang=lang %}
-                {% include_cached trending-tags.html lang=lang %}
-              </div>
+              {% unless page.panel_access == false or layout.panel_access == false %}
+                <div class="access">
+                  {% include_cached update-list.html lang=lang %}
+                  {% include_cached trending-tags.html lang=lang %}
+                </div>
+              {% endunless %}
 
               {% for _include in layout.panel_includes %}
                 {% assign _include_path = _include | append: '.html' %}

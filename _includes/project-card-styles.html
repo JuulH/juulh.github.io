@@ -1,7 +1,10 @@
 <style>
 .project-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid var(--bs-border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--main-border-color);
+  box-shadow: var(--card-shadow);
 }
 
 .project-card:hover {
@@ -10,14 +13,17 @@
 }
 
 /* Light mode styles */
-html:[data-mode="light"] .project-card {
-  background-color: #f8f9fa;
+html[data-mode="light"] .project-card {
+  background-color: var(--card-bg);
 }
 
 /* Dark mode styles */
 html:not([data-mode="light"]) .project-card {
-  background-color: #1e1e1e;
-  color: rgb(255 255 255 / 95%);
+  background-color: var(--card-bg);
+}
+
+html:not([data-mode="light"]) .project-card:hover {
+  box-shadow: 0 8px 18px rgba(124, 212, 196, 0.18), 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .project-card > a:has(.card-img-top) {

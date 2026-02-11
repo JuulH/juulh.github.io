@@ -4,7 +4,7 @@ description: An endlessly generated golf arcade game where your goal is to shoot
 image: /assets/img/projects/infinigolf/infinigolf.gif
 tags: [C++, SDL, Solo Project]
 tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
-order: 1
+order: 3
 date: 2024-01-15
 github: https://github.com/JuulH/CMGT-Intake
 itchio: https://juulh.itch.io/infinigolf

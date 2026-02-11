@@ -4,7 +4,7 @@ description: Intense spatial VR experience built with a custom C++ OpenXR engine
 image: /assets/img/projects/ascension-protocol.gif
 tags: [C++, Custom Engine, OpenXR, Group Project, CI/CD]
 tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
-order: 0
+order: 1
 date: 2025-06-26
 # github: https://github.com/yourusername/project-name
 itchio: https://buas.itch.io/ascension-protocol

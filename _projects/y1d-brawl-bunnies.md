@@ -3,7 +3,7 @@ title: Brawl Bunnies
 description: Robo-engineered bunnies clash in electrifying class-based soccer matches. Punch & shoot the ball into the goal in fast-paced battles of skill and strategy!
 image: /assets/img/projects/brawlbunnies.gif
 tags: [C++, Python, Unreal Engine, Group Project, CI/CD]
-order: 2
+order: 3
 date: 2024-06-17
 # github: https://github.com/yourusername/project-name
 itchio: https://buas.itch.io/brawl-bunnies

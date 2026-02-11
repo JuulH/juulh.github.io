@@ -3,7 +3,7 @@ title: Mantis Engine - Custom C++ OpenXR Game Engine
 description: A custom cross-platform C++ engine for Windows and OpenXR-based VR platforms. Including Fruit Ninja & Shooting Range demo.
 image: /assets/img/projects/mantis-engine/mantis-engine.gif
 tags: [C++, Custom Engine, OpenXR, Group Project]
-order: 1
+order: 2
 date: 2025-04-26
 # github: https://github.com/yourusername/project-name
 # itchio: https://buas.itch.io/ascension-protocol

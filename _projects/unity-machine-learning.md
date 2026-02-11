@@ -3,7 +3,7 @@ title: Evolutionary neural networks from scratch in Unity
 description: Evolutionary neural networks from scratch in Unity for Flappy Bird & Drift Racing.
 image: /assets/img/projects/neuroevolution.png
 tags: [C#, Unity, Machine Learning]
-order: 5
+order: 6
 date: 2020-02-18
 github: https://github.com/JuulH/PWS-Machine-Learning
 # itchio: https://buas.itch.io/ascension-protocol

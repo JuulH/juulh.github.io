@@ -19,6 +19,9 @@
 {% endif %}
 
 {% assign attributes = 'controls' %}
+{% if include.controls == false %}
+  {% assign attributes = '' %}
+{% endif %}
 
 {% if include.autoplay %}
   {% assign attributes = attributes | append: ' ' | append: 'autoplay' %}
@@ -30,6 +33,10 @@
 
 {% if include.muted %}
   {% assign attributes = attributes | append: ' ' | append: 'muted' %}
+{% endif %}
+
+{% if include.playsinline %}
+  {% assign attributes = attributes | append: ' ' | append: 'playsinline' %}
 {% endif %}
 
 <p>

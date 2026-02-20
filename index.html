@@ -15,7 +15,6 @@ bio: >
     **Looking for an internship starting Summer 2026**
 contact_button_label: Get in touch
 itchio_url: https://juulh.itch.io/
-resume_url: '/assets/img/Juul_Harks_Resume.pdf'
 skills:
   - title: Unreal Engine
     icon: /assets/img/icons/unrealengine.svg
@@ -88,8 +87,8 @@ skills:
 					<i class="fas fa-envelope me-2"></i>{{ page.contact_button_label | default: 'Contact' }}
 				</a>
 
-				{% if page.resume_url %}
-					<a class="btn btn-outline-secondary home-primary-btn" href="{{ page.resume_url | relative_url }}" target="_blank" rel="noopener">
+				{% if site.resume_url %}
+					<a class="btn btn-outline-secondary home-primary-btn" href="{{ site.resume_url | relative_url }}" target="_blank" rel="noopener">
 						<i class="fas fa-file-alt me-2"></i>Resume
 					</a>
 				{% endif %}

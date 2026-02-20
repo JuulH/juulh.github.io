@@ -99,7 +99,7 @@ experience_timeline:
 - Email: [juul@sharks.nl](mailto:juul@sharks.nl)
 - GitHub: [github.com/JuulH](https://github.com/JuulH)
 - LinkedIn: [linkedin.com/in/juulharks](https://www.linkedin.com/in/juulharks)
-- Resume: [Download](#)
+- Resume: [Download]({{site.resume_url}}){:target="_blank"}
 
 <style>
 .about-hero {

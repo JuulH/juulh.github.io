@@ -45,7 +45,7 @@
       <div class="project-footer mt-auto pt-3">
         {% if team_size or include.project.duration or include.project.responsibilities %}
           <div class="project-meta">
-            {% if team_size %}
+            {% comment %} {% if team_size %}
               <div class="project-meta-item">
                 <span class="meta-label">Team</span>
                 <span class="meta-value">{{ team_size }}</span>
@@ -56,7 +56,7 @@
                 <span class="meta-label">Duration</span>
                 <span class="meta-value">{{ include.project.duration }}</span>
               </div>
-            {% endif %}
+            {% endif %} {% endcomment %}
             {% if include.project.responsibilities %}
               <div class="project-meta-item">
                 <span class="meta-label">Key responsibilities</span>

@@ -17,6 +17,12 @@
   }
 }
 
+#topbar-wrapper.home-mobile-topbar {
+  @include bp.lg {
+    display: none;
+  }
+}
+
 #topbar {
   @extend %btn-color;
 

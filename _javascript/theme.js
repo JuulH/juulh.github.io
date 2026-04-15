@@ -102,11 +102,12 @@ class Theme {
    * Flips the current theme mode
    */
   static flip() {
-    if (this.#hasMode) {
-      this.#clearMode();
+    if (this.visualState === this.DARK) {
+      this.#setLight();
     } else {
-      this.#sysDark ? this.#setLight() : this.#setDark();
+      this.#setDark();
     }
+
     this.#notify();
   }
 

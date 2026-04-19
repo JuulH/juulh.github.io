@@ -12,6 +12,7 @@ duration: 3 months
 responsibilities:
   - Neural network structure from scratch
   - Genetic algorithm for scoring & evolution
+  - Game demos implemented in Unity
 ---
 
 ## Overview

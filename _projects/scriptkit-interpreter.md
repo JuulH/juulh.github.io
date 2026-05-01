@@ -23,7 +23,7 @@ Games like [The Farmer was Replaced](https://store.steampowered.com/app/2060160/
 
 ## My contributions
 
-### Custum programming language: Flex
+### Custom programming language: Flex
 No programming game is the same. You might want for loops and custom function calls, or none at all - you might want it to be in English, or you might want it to be in your native language.
 
 To allow the developer full customization of the language, and to gain a better understanding of programming languages & compilers I decided to make my own **custom programming language from scratch**. Following the [Crafting Interpreters book by Robert Nystrom](https://craftinginterpreters.com/){:target="_blank"}, I implemented a custom **bytecode compiler & interpreter** with variables (using `std::variant` & `std::visit`), operators, for & while loops and if-else statements as well as various standard library functions.

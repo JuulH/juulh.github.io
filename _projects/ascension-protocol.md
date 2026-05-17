@@ -3,7 +3,7 @@ title: Ascension Protocol
 description: Intense spatial VR experience built with a custom C++ OpenXR engine. Face enemy swarms from all directions, where failure causes the ground to crumble while success leads to ascension.
 image: /assets/img/projects/ascension-protocol.gif
 tags: [C++, Custom Engine, OpenXR, Group Project, CI/CD]
-tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
+# tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
 order: 1
 date: 2025-06-26
 # github: https://github.com/yourusername/project-name

@@ -3,7 +3,7 @@ title: InfiniGolf - Intake Project
 description: An endlessly generated golf arcade game where your goal is to shoot the ball into the hole within 3 strokes and continuing for as long as you can.
 image: /assets/img/projects/infinigolf/infinigolf.gif
 tags: [C++, SDL, Solo Project]
-tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
+# tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
 order: 5
 date: 2024-01-15
 github: https://github.com/JuulH/CMGT-Intake

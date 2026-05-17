@@ -4,7 +4,7 @@ description: Evolutionary neural networks from scratch in Unity for Flappy Bird 
 image: /assets/img/projects/machine-learning-unity.gif
 tags: [C#, Unity, Machine Learning]
 order: 6
-date: 2020-02-18
+date: 2020-03-18
 github: https://github.com/JuulH/PWS-Machine-Learning
 # itchio: https://buas.itch.io/ascension-protocol
 team_size: Solo

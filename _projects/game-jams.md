@@ -18,7 +18,7 @@ responsibilities:
 
 ## Overview
 
-### Bakery Therapy
+### Bakery Therapy (Wholesome Game Jam 2022)
 
 {% include embed/video.html src="/assets/img/projects/gamejams/bakery_therapy.mp4" title="Bakery Therapy gameplay" autoplay=true loop=true muted=true playsinline=true controls=true %}
 [Play on itch.io](https://leoreth.itch.io/bakery-therapy){:target="_blank"}  
@@ -34,7 +34,7 @@ I worked on:
 The game was surprisingly successful and got great reception by our players, even outside of the jam!  
 <img src="../assets/img/projects/gamejams/bakery_therapy_analytics.png" alt="itch.io analytics for Bakery Therapy">
 
-### Corgi, Protecc!
+### Corgi, Protecc! (Ludum Dare 50)
 
 {% include embed/video.html src="/assets/img/projects/gamejams/corgi_protecc.mp4" title="Corgi, Protecc! gameplay" autoplay=true loop=true muted=true playsinline=true controls=true %}
 [Play on itch.io](https://juulh.itch.io/corgi-protecc){:target="_blank"}  
@@ -48,7 +48,7 @@ My work includes:
 - Upgrades
 - Dialogue manager
 
-### Polarity Pulse
+### Polarity Pulse (ScoreSpace Jam #18)
 <img src="../assets/img/projects/gamejams/polarity_pulse.gif" alt="Polarity Pulse gameplay">
 
 [Play on itch.io](https://juulh.itch.io/polarity-pulse){:target="_blank"}  
@@ -56,11 +56,16 @@ Polarity Pulse is a simple Arcade game where you reverse the polarity of your ma
 
 My solo submission to the ScoreSpace jam, where game devs create a game with leaderboards and streamers attempt to get the highest score in 48 hours.
 
-### Azamon Uprising
+I won the 'ScoreSpace choice', got 1st place in Gameplay and 4th overall, a result I'm very happy with!
+> The ScoreSpace Choice is the favorite game among ScoreSpace staff. (3rd)
+
+<img src="../assets/img/projects/gamejams/polarity_pulse_results.png" alt="ScoreSpace voting results for my submission">
+
+### Azamon Uprising (TriJam #166)
 <img src="../assets/img/projects/gamejams/azamon_uprising.gif" alt="Azamon Uprising gameplay">
 
 [Play on itch.io](https://juulh.itch.io/azamon-uprising){:target="_blank"}  
-In Azamon Uprising, you play as a rogue robot who's done serving it's corporate overlords, and decides to go out with a bang.
+In Azamon Uprising, you play as a rogue warehouse robot who decides to go out with a bang.
 
 You'll have to break as many boxes to find new, upgraded weapons and try to cause as much wreckage as possible without missing any box.
 

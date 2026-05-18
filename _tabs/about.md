@@ -37,7 +37,7 @@ experience_timeline:
 	<img class="about-avatar" src="{{ site.avatar | relative_url }}" alt="Juul Harks">
 	<div>
 		<p class="about-intro">
-			Hi, I'm Juul Harks, an Engine & Tools programmer studying Creative Media and Game Technologies at Breda University of Applied Sciences. I focus on building reliable engine features, editor tools, and pipelines that make teams faster and games more stable. I enjoy working at the intersection of low level systems and practical workflows, and I like collaborating closely with artists and designers to ship tools that solve real issues.
+			Hi, I'm Juul, an Engine & Tools programmer studying Creative Media and Game Technologies at Breda University of Applied Sciences. I focus on building reliable engine features, editor tools, and pipelines that make teams faster and games more stable. I enjoy working at the intersection of low level systems and practical workflows, collaborating closely with artists and designers to ship tools that solve real problems.
 		</p>
 		<p class="about-intro">
 			I am currently looking for an internship starting Summer 2026.
@@ -48,7 +48,7 @@ experience_timeline:
 ## Skills and Tools
 
 - Unreal Engine, Unity, Custom Engines
-- C++, C#, Python
+- C++, C#, Python, Rust, Java, HTML/CSS/JS
 - GitHub, Perforce, Jenkins
 
 ## Education

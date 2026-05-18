@@ -34,7 +34,7 @@ This game was entirely created with the Mantis Engine, our custom C++ VR engine 
 ### Programming Lead
 As programming lead, I guided both technical development and team coordination across the 8-week project cycle.
 - **Facilitated key meetings:** Led concepting, sprint planning, reviews and retrospectives with a structured approach.
-- **Stakeholder communication:** Communicated progress to external stakeholders through regular update presentations.
+- **Stakeholder communication:** Communicated progress with stakeholders through regular update presentations.
 - **Conflict resolution:** Addressed team communication issues through direct conversations and mediation.
 - **Coordination & scope:** Managed programming team workload and cross-discipline collaboration.
 
@@ -165,11 +165,11 @@ I later implemented by changing the texture over a pre-loaded list of frames.
 <!-- ## Challenges -->
 
 ## What I Learned
-- **Programming Leadership & Team Management:** Leading an 8-person PR team in a 14-person multi-disciplinary team taught me a lot about technical oversight and managing people.
-  I learned to manage scope, project priorities and clear team communication. Balancing this Lead work together with my regular development work was quite a challenge - I would often try to do both 100% which is not possible. Learning to effectively plan and delegate the work instead proved successful.
+- **Programming Leadership & Team Management:** Leading an 8-person PR team in a 14-person multi-disciplinary team taught me a lot about technical oversight and managing dependencies.
+  I learned to manage scope, project priorities and clear team communication. Balancing this lead work together with my regular development work was quite a challenge - I would often try to do both 100% which is not possible. Learning to effectively plan and delegate the work instead proved successful.
 
 - **Multi-disciplinary collaboration in custom engine:** Working together with artists & designers in a custom engine showed the importance of robust tooling and pipelines.
-  I learned to communicate effectively on the needs of other disciplines to figure out their needs and our technical capability.
+  I learned to communicate effectively with other disciplines to determine their needs and our technical capabilities.
 
 <!-- ## Future Improvements
 

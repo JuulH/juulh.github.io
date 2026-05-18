@@ -2,7 +2,7 @@
 layout: home
 # Index page
 panel: false
-specialization: Engine & Tools
+specialization: Engine & Tools Programmer
 bio: >
     Games programmer specializing in **engine development** and **tools programming**.
     I enjoy creating tools and systems that improve workflows and help games get made.
@@ -16,6 +16,7 @@ description: "Games programmer specializing in engine & tools development. Study
 skills:
   - title: Unreal Engine
     icon: /assets/img/icons/unrealengine.svg
+    light_icon: true
     tooltip: "Gameplay systems & tools in C++ and Blueprints, from personal to large group projects."
   - title: Unity
     icon: /assets/img/icons/unity.svg
@@ -31,6 +32,7 @@ skills:
     tooltip: "Automated CI/CD build scripts, tooling, gameplay."
   - title: GitHub
     icon: /assets/img/icons/github.svg
+    light_icon: true
     tooltip: "6+ years of experience using source control in personal and team environments. Familiar with GitHub Projects, review processes and GitHub Actions for CI/CD."
   - title: Perforce
     icon: /assets/img/icons/perforce.png
@@ -67,7 +69,7 @@ skills:
 				<div class="home-skill-list">
 					{% if page.skills and page.skills.size > 0 %}
 						{% for skill in page.skills %}
-							<span class="home-skill-icon" title="{{ skill.title }}" aria-label="{{ skill.title }}">
+						<span class="home-skill-icon{% if skill.light_icon %} light-icon{% endif %}" title="{{ skill.title }}" aria-label="{{ skill.title }}">
 								<img src="{{ skill.icon | relative_url }}" alt="{{ skill.title }}">
 								<span class="home-skill-tooltip">
 									<strong>{{ skill.title }}</strong>
@@ -277,6 +279,17 @@ skills:
 	padding: 0.5rem;
 	margin: 0;
 	object-fit: contain;
+}
+
+/* Light icons for dark mode */
+[data-mode='dark'] .home-skill-icon.light-icon img {
+	filter: brightness(0.8) invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-mode]) .home-skill-icon.light-icon img {
+		filter: brightness(0.8) invert(1);
+	}
 }
 </style>
 

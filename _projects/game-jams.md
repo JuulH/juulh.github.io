@@ -4,7 +4,7 @@ description: In my free time I enjoy participating in game jams to improve my sk
 image: /assets/img/projects/gamejams/gamejams_compilation.gif
 tags: [C#, Unity, Solo Project, Group Project]
 # tech_stack: [Python 3.11, Django 4.2, PostgreSQL, Docker, Redis, Celery]
-order: 7
+order: 2
 date: 2022-05-02
 # github: https://github.com/JuulH/CMGT-Intake
 itchio: https://juulh.itch.io/

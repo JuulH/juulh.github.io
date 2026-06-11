@@ -1,8 +1,8 @@
 ---
 layout: blog
-title: Blog
+title: Articles
 icon: fas fa-newspaper
 order: 2
 nav: true
-permalink: /blog/
+permalink: /articles/
 ---
